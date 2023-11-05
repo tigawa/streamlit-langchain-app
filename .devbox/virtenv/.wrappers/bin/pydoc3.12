@@ -1,0 +1,12 @@
+#!/bin/bash
+
+PATH="/Users/taiichi/.cache/devbox/bin/current:$PATH"
+
+if [[ "$__DEVBOX_SHELLENV_HASH_cd02d46cc92d2cc37d70f598118bebda9fe8c56e0b93a9a2fb8feefafa5d5dd7" != "ee55cbd882dd5dd14fa0f9ce1b44eaa9e961131965c79854f84ee8ffbc12c8ce" ]] && [[ -z "$__DEVBOX_SHELLENV_HASH_cd02d46cc92d2cc37d70f598118bebda9fe8c56e0b93a9a2fb8feefafa5d5dd7_GUARD" ]]; then
+export __DEVBOX_SHELLENV_HASH_cd02d46cc92d2cc37d70f598118bebda9fe8c56e0b93a9a2fb8feefafa5d5dd7_GUARD=true
+eval "$(DO_NOT_TRACK=1 devbox shellenv --preserve-path-stack -c /Users/taiichi/Repo/streamlit-langchain-app)"
+fi
+
+export PATH=$(echo $PATH | /usr/bin/sed -e 's#:/Users/taiichi/Repo/streamlit-langchain-app/.devbox/virtenv/.wrappers/bin##' -e 's#/Users/taiichi/Repo/streamlit-langchain-app/.devbox/virtenv/.wrappers/bin:##' -e 's#/Users/taiichi/Repo/streamlit-langchain-app/.devbox/virtenv/.wrappers/bin##')
+
+exec /nix/store/9zq7vfk8a9fiyj66prg0a3zh28bz06yk-python3-3.12.0/bin/pydoc3.12 "$@"
