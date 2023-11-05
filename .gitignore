@@ -209,4 +209,7 @@ pyrightconfig.json
 # dev-box
 .devbox/
 
+#vscode
+.vscode
+
 # End of https://www.toptal.com/developers/gitignore/api/python,macos
